@@ -32,6 +32,10 @@ body.menu-open {
   overflow: hidden;
 }
 
+body.menu-navigating .nav-panel {
+  transition: none !important;
+}
+
 body.menu-open::before {
   content: "";
   position: fixed;
@@ -3379,6 +3383,12 @@ body[data-page="contact"] .contact-section-heading .eyebrow {
   .menu-open .nav-panel {
     opacity: 1 !important;
     pointer-events: auto !important;
+    transform: translateX(0) !important;
+  }
+
+  .menu-navigating .nav-panel {
+    transition: none !important;
+    opacity: 1 !important;
     transform: translateX(0) !important;
   }
 
