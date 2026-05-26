@@ -41,7 +41,14 @@ if (menuToggle && navPanel) {
   });
 
   navPanel.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (event) => {
+      const targetUrl = new URL(link.getAttribute("href"), window.location.href);
+      const isDifferentPage = targetUrl.pathname !== window.location.pathname;
+
+      if (isDifferentPage && !link.getAttribute("href").startsWith("#")) {
+        return;
+      }
+
       body.classList.remove("menu-open");
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.setAttribute("aria-label", "Open menu");
