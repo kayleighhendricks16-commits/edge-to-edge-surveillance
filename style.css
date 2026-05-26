@@ -3612,24 +3612,24 @@ body[data-page="contact"] .contact-section-heading .eyebrow {
   body[data-page="home"] .hero {
     min-height: 600px !important;
     align-items: start !important;
-    padding-top: 52px !important;
+    padding-top: 66px !important;
     padding-bottom: 58px !important;
   }
 
   body[data-page="home"] .hero-centered {
-    padding-top: 18px !important;
+    padding-top: 24px !important;
   }
 }
 
 @media (max-width: 420px) {
   body[data-page="home"] .hero {
     min-height: 610px !important;
-    padding-top: 42px !important;
+    padding-top: 56px !important;
     padding-bottom: 54px !important;
   }
 
   body[data-page="home"] .hero-centered {
-    padding-top: 14px !important;
+    padding-top: 18px !important;
   }
 }
 
