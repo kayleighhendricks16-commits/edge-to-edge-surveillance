@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Edge to Edge Surveillance provides integrated CCTV, access control, alarm, boom gate and commercial security solutions in South Africa." />
+    <title>Edge to Edge Surveillance | Commercial Security Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <div class="emergency-bar">
+        <span>Emergency Call:</span>
+        <a href="tel:0710200432">071 020 0432</a>
+        <span>|</span>
+        <a href="tel:0834445337">083 444 5337</a>
+      </div>
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="Edge to Edge Surveillance home">
+          <img src="etelogo.png" alt="Edge to Edge Surveillance logo" />
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-panel" data-nav-panel>
+          <a data-nav="home" href="index.html">Home</a>
+          <a data-nav="about" href="about.html">About</a>
+          <div class="nav-dropdown" data-services-dropdown><a data-nav="services" href="services.html">Services</a><button class="nav-dropdown-toggle" type="button" aria-label="Open services menu" aria-expanded="false" data-services-toggle>▾</button><div class="nav-dropdown-menu"><a href="services.html#access-control">Access Control</a><a href="services.html#alarms">Alarms</a><a href="services.html#boom-gates">Boom Gates</a><a href="services.html#cctv">CCTV</a><a href="services.html#control-room">CCTV Control Room</a><a href="services.html#electric-fencing">Electric Fencing</a><a href="services.html#solar">Solar</a></div></div>
+          <div class="nav-dropdown" data-solutions-dropdown><a data-nav="solutions" href="solutions.html">Solutions</a><button class="nav-dropdown-toggle" type="button" aria-label="Open solutions menu" aria-expanded="false" data-solutions-toggle>▾</button><div class="nav-dropdown-menu"><a href="solutions.html#finance-options">Finance Options</a><a href="solutions.html#sla-options">Service Level Agreement Options</a></div></div>
+          <a data-nav="contact" href="contact.html">Contact</a>
+          <a class="btn btn-primary" href="contact.html">Request A Quote</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-slider">
+          <span
+            class="hero-slide is-active"
+            data-index="0"
+            data-eyebrow="Commercial security specialists"
+            data-title="Integrated Security for Business Sites"
+            data-description="CCTV, access control, alarms and perimeter systems designed for commercial and industrial operations."
+            data-primary-label="Request A Quote"
+            data-primary-link="contact.html"
+            data-secondary-label="Explore Services"
+            data-secondary-link="services.html"
+            style="--hero-image: url('solarhero.avif');"
+          ></span>
+          <span
+            class="hero-slide"
+            data-index="1"
+            data-eyebrow="CCTV and monitoring expertise"
+            data-title="CCTV and Control Room Monitoring"
+            data-description="Practical monitoring systems built for faster response, better incident review and stronger daily visibility."
+            data-primary-label="Book A Site Review"
+            data-primary-link="contact.html"
+            data-secondary-label="View CCTV Services"
+            data-secondary-link="services.html#cctv"
+            style="--hero-image: url('cctvhero.avif');"
+          ></span>
+          <span
+            class="hero-slide"
+            data-index="2"
+            data-eyebrow="Perimeter and power resilience"
+            data-title="Perimeter Security and Uptime Support"
+            data-description="Protect boundaries and maintain uptime with integrated site protection and dependable power support options."
+            data-primary-label="Request A Quote"
+            data-primary-link="contact.html"
+            data-secondary-label="View Solutions"
+            data-secondary-link="solutions.html"
+            style="--hero-image: url('boomgateshero.avif');"
+          ></span>
+        </div>
+        <button class="hero-slider-arrow hero-prev" type="button" data-action="prev" aria-label="Previous slide" onclick="window.edgeHeroPrev && window.edgeHeroPrev()">
+          <span class="arrow-glyph" aria-hidden="true">&lsaquo;</span>
+        </button>
+        <button class="hero-slider-arrow hero-next" type="button" data-action="next" aria-label="Next slide" onclick="window.edgeHeroNext && window.edgeHeroNext()">
+          <span class="arrow-glyph" aria-hidden="true">&rsaquo;</span>
+        </button>
+        <div class="container hero-centered">
+          <div class="hero-copy reveal">
+            <p class="eyebrow" data-hero-eyebrow>Commercial security specialists</p>
+            <h1 data-hero-title>Integrated Security Solutions for Businesses and Commercial Industries</h1>
+            <p class="lead" data-hero-description>Edge to Edge Surveillance provides CCTV, access control, alarm systems, boom gates, electric fencing, solar and control room solutions for commercial, industrial and corporate environments.</p>
+            <div class="button-row">
+              <a class="btn btn-primary" data-hero-primary href="contact.html">Request A Quote</a>
+              <a class="btn btn-secondary" data-hero-secondary href="services.html">Explore Services</a>
+            </div>
+            <div class="hero-dots">
+              <button class="hero-dot is-active" type="button" data-index="0" aria-label="Go to slide 1"></button>
+              <button class="hero-dot" type="button" data-index="1" aria-label="Go to slide 2"></button>
+              <button class="hero-dot" type="button" data-index="2" aria-label="Go to slide 3"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section white-section home-services-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Services</p>
+            <h2>Security services built for business sites</h2>
+            <p>Professional systems for access, monitoring, perimeter protection and operational security.</p>
+          </div>
+          <div class="card-grid services-preview">
+            <article class="service-card reveal">
+              <div class="service-image" style="--service-image: url('accesscontrol.avif');"></div>
+              <h3>Access Control</h3><p>Manage movement through controlled entry points and staff access permissions.</p><a href="contact.html">Request a Quote</a>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-image" style="--service-image: url('alarms.avif');"></div>
+              <h3>Alarms</h3><p>Reliable alarm systems designed around site risk and response requirements.</p><a href="contact.html">Request a Quote</a>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-image" style="--service-image: url('boom%20gates.avif');"></div>
+              <h3>Boom Gates</h3><p>Vehicle access control for offices, estates, depots and industrial entrances.</p><a href="contact.html">Request a Quote</a>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-image" style="--service-image: url('cctv.avif');"></div>
+              <h3>CCTV</h3><p>Clear surveillance coverage for monitoring, incident review and operational visibility.</p><a href="contact.html">Request a Quote</a>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-image" style="--service-image: url('controlroom.avif');"></div>
+              <h3>CCTV Control Room</h3><p>Structured control room setups for centralised monitoring and response.</p><a href="contact.html">Request a Quote</a>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-image" style="--service-image: url('electricfence.avif');"></div>
+              <h3>Electric Fencing</h3><p>Perimeter protection that adds a clear deterrent and stronger boundary control.</p><a href="contact.html">Request a Quote</a>
+            </article>
+            <article class="service-card solar-wide reveal">
+              <div class="service-image" style="--service-image: url('solar.avif');"></div>
+              <h3>Solar</h3><p>Power support options for security equipment where uptime is a priority.</p><a href="contact.html">Request a Quote</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section black-section home-about-preview">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">About</p>
+            <h2>Your Security is Our Business</h2>
+          </div>
+          <div class="home-about-copy reveal">
+            <p>Closed circuit television (CCTV), like all electronics, is constantly evolving in both application and functionality. Edge to Edge has product specialists who continuously assess market developments, evaluate practical use cases, and approve only the products that meet strict quality, reliability and support standards.</p>
+            <p>Effective system design requires more than equipment selection. Edge to Edge’s trained team develops bespoke solutions that strengthen security while also supporting business operations such as stock control and standard operating procedures.</p>
+            <p>CCTV solutions generally fall into three main options: Analogue, High-Definition Analogue and IP (Internet Protocol). Whether integrating into existing infrastructure or planning a new deployment, Edge to Edge can design the right solution for your requirements.</p>
+          </div>
+          <div class="home-about-actions reveal">
+            <a class="btn btn-secondary" href="about.html">Learn More About Us</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section white-section why-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Why choose us</p>
+            <h2>Trusted support, skilled teams and reliable response</h2>
+          </div>
+          <div class="why-list">
+            <article class="why-item reveal">
+              <span class="mini-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation"><path d="M12 6v6l4 2m6-2a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"/></svg>
+              </span>
+              <span>24x7 Service Available</span>
+            </article>
+            <article class="why-item reveal">
+              <span class="mini-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+              </span>
+              <span>Emergency Service</span>
+            </article>
+            <article class="why-item reveal">
+              <span class="mini-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation"><path d="M12 3 4 6v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10V6l-8-3Zm-1 13-3-3 1.4-1.4 1.6 1.6 3.6-3.6L16 11l-5 5Z"/></svg>
+              </span>
+              <span>Highly Qualified Staff</span>
+            </article>
+            <article class="why-item reveal">
+              <span class="mini-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation"><path d="M12 2 3 6v7c0 5.2 3.6 9.2 9 11 5.4-1.8 9-5.8 9-11V6l-9-4Zm0 4.2L17 8v4.8c0 3.8-2.4 6.7-5 7.9-2.6-1.2-5-4.1-5-7.9V8l5-1.8Z"/></svg>
+              </span>
+              <span>Most Trusted in South Africa</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section black-section clients">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Client experience</p>
+            <h2>Trusted by leading businesses</h2>
+          </div>
+          <div class="client-carousel reveal" data-client-carousel>
+            <button class="client-arrow client-prev" type="button" aria-label="Previous clients">&#8249;</button>
+            <div class="client-viewport">
+              <div class="client-track" data-client-track>
+                <article class="client-card"><img src="netcare.webp" alt="Netcare logo" loading="lazy" /><p>Netcare</p></article>
+                <article class="client-card"><img src="Tiger-Brands.webp" alt="Tiger Brands logo" loading="lazy" /><p>Tiger Brands</p></article>
+                <article class="client-card"><img src="Scania.webp" alt="Scania logo" loading="lazy" /><p>Scania</p></article>
+                <article class="client-card"><img src="Avis.png" alt="Avis logo" loading="lazy" /><p>Avis</p></article>
+                <article class="client-card"><img src="Europcar.webp" alt="Europcar logo" loading="lazy" /><p>Europcar</p></article>
+                <article class="client-card"><img src="Bollore.webp" alt="Bollore Logistics logo" loading="lazy" /><p>Bollore Logistics</p></article>
+                <article class="client-card"><img src="Digistcs.webp" alt="Digistics logo" loading="lazy" /><p>Digistics</p></article>
+                <article class="client-card"><img src="PG.webp" alt="P and G logo" loading="lazy" /><p>P&amp;G</p></article>
+                <article class="client-card"><img src="heneways.webp" alt="Heneways logo" loading="lazy" /><p>Heneways</p></article>
+                <article class="client-card"><img src="msa.webp" alt="MSA logo" loading="lazy" /><p>MSA</p></article>
+                <article class="client-card"><img src="Blue-Car-Rental.webp" alt="Blue Car Rental logo" loading="lazy" /><p>Blue Car Rental</p></article>
+                <article class="client-card"><img src="GH.png" alt="GH logo" loading="lazy" /><p>GH</p></article>
+                <article class="client-card"><img src="Isegen.webp" alt="Isegen logo" loading="lazy" /><p>Isegen</p></article>
+                <article class="client-card"><img src="Macnell.webp" alt="Macnell logo" loading="lazy" /><p>Macnell</p></article>
+                <article class="client-card"><img src="Tempest.webp" alt="Tempest logo" loading="lazy" /><p>Tempest</p></article>
+                <article class="client-card"><img src="Tiletoria.webp" alt="Tiletoria logo" loading="lazy" /><p>Tiletoria</p></article>
+                <article class="client-card"><img src="arteco.webp" alt="Arteco logo" loading="lazy" /><p>Arteco</p></article>
+              </div>
+            </div>
+            <button class="client-arrow client-next" type="button" aria-label="Next clients">&#8250;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section white-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Testimonials</p>
+            <h2>What customers say</h2>
+          </div>
+          <div class="testimonial-grid">
+            <article class="testimonial-card reveal">
+              <p>“Edge to Edge delivered quality equipment, excellent camera resolution and neat installation work across our national sites.”</p>
+              <strong>Glen Vincent</strong><span>Digistics</span>
+            </article>
+            <article class="testimonial-card reveal">
+              <p>“Edge to Edge has provided punctual, professional installations and reliable support whenever immediate repairs or installations were needed.”</p>
+              <strong>Jacques De Klerk</strong><span>Bollore Logistics</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section black-section faq-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">FAQ</p>
+            <h2>Questions businesses often ask</h2>
+            <p>Clear answers for planning CCTV, access control, alarms, perimeter protection and support with Edge to Edge.</p>
+          </div>
+          <div class="faq-grid">
+            <details class="faq-item reveal" open>
+              <summary>What types of businesses does Edge to Edge support?</summary>
+              <p>Edge to Edge works with commercial, industrial, retail, healthcare, education, logistics and corporate environments that need practical security systems and dependable support.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Can you design a system around an existing site?</summary>
+              <p>Yes. Existing infrastructure, site risks, access points and operational needs can be reviewed before recommending CCTV, access control, alarms, boom gates or perimeter solutions.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Do you provide maintenance and repairs?</summary>
+              <p>Yes. Edge to Edge provides maintenance and repair support to help keep security equipment operational, reduce downtime and support day-to-day business continuity.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Are finance and SLA options available?</summary>
+              <p>Yes. Finance options are available for non-income generating capital equipment, and Service Level Agreement options help keep systems maintained and supported.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Which areas do you service?</summary>
+              <p>Edge to Edge has branches in Gauteng and KZN, with experience supporting businesses across Johannesburg, Durban and wider regional or multi-site operations.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section white-section cta-section">
+        <div class="container cta-box reveal">
+          <h2>Need a Security Solution Built Around Your Business?</h2>
+          <p>Speak to Edge to Edge Surveillance about a tailored system for your site, team and operating environment.</p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="contact.html">Request A Quote</a>
+            <a class="btn btn-white" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div><img src="etelightlogo.png" alt="Edge to Edge Surveillance logo" /><p>Commercial surveillance and security systems for South African businesses that need practical protection and dependable support.</p><div class="socials"><a href="#">f</a><a href="#">in</a><a class="instagram-icon" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm8.7 2.2a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6ZM12 7.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Z"/></svg></a></div></div>
+        <div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="solutions.html">Solutions</a><a href="contact.html">Contact</a></div>
+        <div><h3>Services</h3><a href="services.html#access-control">Access Control</a><a href="services.html#cctv">CCTV</a><a href="services.html#alarms">Alarms</a><a href="services.html#boom-gates">Boom Gates</a><a href="services.html#electric-fencing">Electric Fencing</a></div>
+        <div><h3>Contact</h3><p>Johannesburg: 011 608 1267</p><p>Durban: 081 314 8291</p><p>Emergency: 071 020 0432 / 083 444 5337</p><a href="mailto:craig@etoe.co.za">craig@etoe.co.za</a></div>
+      </div>
+      <div class="footer-bottom">&copy; <span data-year></span> Edge to Edge Surveillance. All rights reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
