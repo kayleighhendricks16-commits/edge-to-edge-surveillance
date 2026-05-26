@@ -1769,6 +1769,10 @@ body[data-page="solutions"] .sla-options-block .sla-card > a:hover {
   box-shadow: var(--shadow);
 }
 
+#contact-form {
+  scroll-margin-top: 130px;
+}
+
 .contact-form label {
   display: grid;
   gap: 7px;
@@ -3608,20 +3612,24 @@ body[data-page="contact"] .contact-section-heading .eyebrow {
   body[data-page="home"] .hero {
     min-height: 600px !important;
     align-items: start !important;
-    padding-top: 26px !important;
+    padding-top: 52px !important;
     padding-bottom: 58px !important;
   }
 
   body[data-page="home"] .hero-centered {
-    padding-top: 8px !important;
+    padding-top: 18px !important;
   }
 }
 
 @media (max-width: 420px) {
   body[data-page="home"] .hero {
     min-height: 610px !important;
-    padding-top: 18px !important;
+    padding-top: 42px !important;
     padding-bottom: 54px !important;
+  }
+
+  body[data-page="home"] .hero-centered {
+    padding-top: 14px !important;
   }
 }
 
