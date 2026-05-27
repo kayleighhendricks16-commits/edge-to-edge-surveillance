@@ -34,8 +34,6 @@ document.querySelectorAll("[data-nav]").forEach((link) => {
 });
 
 if (menuToggle && navPanel) {
-  let menuIsNavigating = false;
-
   const closeMobileMenu = () => {
     body.classList.remove("menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
@@ -48,28 +46,14 @@ if (menuToggle && navPanel) {
   };
 
   const handleMobileNavigation = (event) => {
-    if (menuIsNavigating) {
-      event.preventDefault();
-      return;
-    }
-
     const link = event.currentTarget;
     const href = link.getAttribute("href");
     if (!href || href === "#") return;
 
     const targetUrl = new URL(href, window.location.href);
-    const isHttpLink = targetUrl.protocol === "http:" || targetUrl.protocol === "https:";
     const isSamePage = targetUrl.pathname === window.location.pathname;
 
-    if (isHttpLink && !isSamePage) {
-      event.preventDefault();
-      menuIsNavigating = true;
-      body.classList.add("menu-navigating");
-      window.location.assign(targetUrl.href);
-      return;
-    }
-
-    closeMobileMenu();
+    if (isSamePage) closeMobileMenu();
   };
 
   menuToggle.addEventListener("click", () => {
@@ -80,7 +64,6 @@ if (menuToggle && navPanel) {
 
   navPanel.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", handleMobileNavigation);
-    link.addEventListener("touchend", handleMobileNavigation, { passive: false });
   });
 }
 
