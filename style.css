@@ -2413,9 +2413,14 @@ p {
 }
 
 .site-header {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 0;
   background: rgba(255, 255, 255, 0.86);
   border-bottom: 1px solid #e3e8ef;
   backdrop-filter: blur(14px);
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(10, 12, 16, 0.08);
 }
 
 .emergency-bar {
