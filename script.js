@@ -34,8 +34,29 @@ document.querySelectorAll("[data-nav]").forEach((link) => {
 });
 
 if (menuToggle && navPanel) {
+  const navOriginalParent = navPanel.parentElement;
+  const navOriginalNextSibling = navPanel.nextSibling;
+  const mobileNavQuery = window.matchMedia("(max-width: 980px)");
+
+  const placeMobileNav = () => {
+    if (mobileNavQuery.matches) {
+      if (navPanel.parentElement !== document.body) {
+        document.body.appendChild(navPanel);
+      }
+      return;
+    }
+
+    if (navPanel.parentElement !== navOriginalParent) {
+      navOriginalParent.insertBefore(navPanel, navOriginalNextSibling);
+    }
+  };
+
+  placeMobileNav();
+  mobileNavQuery.addEventListener("change", placeMobileNav);
+
   const closeMobileMenu = () => {
     body.classList.remove("menu-open");
+    menuToggle.classList.remove("active");
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open menu");
     navDropdowns.forEach((dropdown) => {
@@ -58,6 +79,7 @@ if (menuToggle && navPanel) {
 
   menuToggle.addEventListener("click", () => {
     const isOpen = body.classList.toggle("menu-open");
+    menuToggle.classList.toggle("active", isOpen);
     menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
   });
