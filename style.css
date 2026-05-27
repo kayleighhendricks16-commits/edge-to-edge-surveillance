@@ -3698,8 +3698,8 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.18);
     transform: translateX(100%);
     -webkit-transform: translateX(100%);
-    transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
-    -webkit-transition: -webkit-transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-transition: -webkit-transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1001;
     -webkit-overflow-scrolling: touch;
     will-change: transform;
@@ -3745,16 +3745,16 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
     font-weight: 850;
     text-align: center;
     opacity: 0;
-    transform: translateY(28px);
-    transition: color 0.25s ease, transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.48s ease;
+    transform: translate3d(0, 34px, 0);
+    transition: color 0.25s ease, transform 0.62s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
     transition-delay: 0s;
   }
 
   .mobile-menu.active .mobile-link,
   .mobile-menu.active .mobile-dropdown {
     opacity: 1;
-    transform: translateY(0);
-    transition-delay: calc(0.075s * var(--item-index, 0));
+    transform: translate3d(0, 0, 0);
+    transition-delay: calc(0.095s * var(--item-index, 0));
   }
 
   .mobile-link:hover,
@@ -3764,8 +3764,8 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
 
   .mobile-dropdown {
     opacity: 0;
-    transform: translateY(28px);
-    transition: transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.48s ease;
+    transform: translate3d(0, 34px, 0);
+    transition: transform 0.62s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
   }
 
   .mobile-dropdown-toggle {
@@ -3831,7 +3831,6 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
     border-radius: 999px;
     background: #ed1c25;
     color: #ffffff !important;
-    transform: none !important;
   }
 
   .mobile-menu a,
@@ -3839,5 +3838,35 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
   .menu-toggle {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent !important;
+  }
+}
+
+@media (max-width: 839px) {
+  body[data-page="solutions"] .finance-options-block {
+    padding: 22px !important;
+  }
+
+  body[data-page="solutions"] .finance-advantages {
+    padding-top: 18px;
+  }
+
+  body[data-page="solutions"] .finance-advantages ul {
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  body[data-page="solutions"] .finance-advantages li {
+    min-height: auto !important;
+    padding: 12px 14px 12px 42px;
+    border-radius: 14px;
+    line-height: 1.45;
+  }
+
+  body[data-page="solutions"] .finance-advantages li::before {
+    left: 14px;
+    top: 14px;
+    width: 18px;
+    height: 18px;
+    font-size: 0.68rem;
   }
 }
