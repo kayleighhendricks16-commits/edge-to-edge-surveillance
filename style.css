@@ -3652,6 +3652,11 @@ body[data-page="contact"] .contact-section-heading .eyebrow {
   white-space: nowrap !important;
 }
 
+body[data-page="home"] .services-preview .service-card > a[href*="contact.html"] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 /* Mamba-style mobile menu stability */
 @media (max-width: 980px) {
   .nav-panel {
