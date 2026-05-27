@@ -34,29 +34,39 @@ document.querySelectorAll("[data-nav]").forEach((link) => {
 });
 
 if (menuToggle && navPanel) {
-  const navOriginalParent = navPanel.parentElement;
-  const navOriginalNextSibling = navPanel.nextSibling;
-  const mobileNavQuery = window.matchMedia("(max-width: 980px)");
+  const mobileMenu = document.createElement("div");
+  mobileMenu.className = "mobile-menu";
+  mobileMenu.id = "mobileMenu";
+  mobileMenu.innerHTML = `
+    <div class="mobile-logo"><img src="etelogo.png" alt="Edge to Edge Surveillance logo" /></div>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a class="mobile-link" data-mobile-nav="home" href="index.html">Home</a>
+      <a class="mobile-link" data-mobile-nav="about" href="about.html">About</a>
+      <a class="mobile-link" data-mobile-nav="services" href="services.html">Services</a>
+      <a class="mobile-link mobile-sub-link" href="services.html#access-control">Access Control</a>
+      <a class="mobile-link mobile-sub-link" href="services.html#alarms">Alarms</a>
+      <a class="mobile-link mobile-sub-link" href="services.html#boom-gates">Boom Gates</a>
+      <a class="mobile-link mobile-sub-link" href="services.html#cctv">CCTV</a>
+      <a class="mobile-link" data-mobile-nav="solutions" href="solutions.html">Solutions</a>
+      <a class="mobile-link mobile-sub-link" href="solutions.html#finance-options">Finance Options</a>
+      <a class="mobile-link mobile-sub-link" href="solutions.html#sla-options">SLA Options</a>
+      <a class="mobile-link" data-mobile-nav="contact" href="contact.html">Contact</a>
+      <a class="mobile-link mobile-quote" href="contact.html#contact-form">Request A Quote</a>
+    </nav>
+  `;
+  document.body.appendChild(mobileMenu);
 
-  const placeMobileNav = () => {
-    if (mobileNavQuery.matches) {
-      if (navPanel.parentElement !== document.body) {
-        document.body.appendChild(navPanel);
-      }
-      return;
+  mobileMenu.querySelectorAll("[data-mobile-nav]").forEach((link) => {
+    if (link.dataset.mobileNav === currentPage) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
     }
-
-    if (navPanel.parentElement !== navOriginalParent) {
-      navOriginalParent.insertBefore(navPanel, navOriginalNextSibling);
-    }
-  };
-
-  placeMobileNav();
-  mobileNavQuery.addEventListener("change", placeMobileNav);
+  });
 
   const closeMobileMenu = () => {
     body.classList.remove("menu-open");
     menuToggle.classList.remove("active");
+    mobileMenu.classList.remove("active");
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open menu");
     navDropdowns.forEach((dropdown) => {
@@ -80,11 +90,12 @@ if (menuToggle && navPanel) {
   menuToggle.addEventListener("click", () => {
     const isOpen = body.classList.toggle("menu-open");
     menuToggle.classList.toggle("active", isOpen);
+    mobileMenu.classList.toggle("active", isOpen);
     menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
   });
 
-  navPanel.querySelectorAll("a").forEach((link) => {
+  mobileMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", handleMobileNavigation);
   });
 }
