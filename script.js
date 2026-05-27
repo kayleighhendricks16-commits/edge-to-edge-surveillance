@@ -40,18 +40,31 @@ if (menuToggle && navPanel) {
   mobileMenu.innerHTML = `
     <div class="mobile-logo"><img src="etelogo.png" alt="Edge to Edge Surveillance logo" /></div>
     <nav class="mobile-nav" aria-label="Mobile navigation">
-      <a class="mobile-link" data-mobile-nav="home" href="index.html">Home</a>
-      <a class="mobile-link" data-mobile-nav="about" href="about.html">About</a>
-      <a class="mobile-link" data-mobile-nav="services" href="services.html">Services</a>
-      <a class="mobile-link mobile-sub-link" href="services.html#access-control">Access Control</a>
-      <a class="mobile-link mobile-sub-link" href="services.html#alarms">Alarms</a>
-      <a class="mobile-link mobile-sub-link" href="services.html#boom-gates">Boom Gates</a>
-      <a class="mobile-link mobile-sub-link" href="services.html#cctv">CCTV</a>
-      <a class="mobile-link" data-mobile-nav="solutions" href="solutions.html">Solutions</a>
-      <a class="mobile-link mobile-sub-link" href="solutions.html#finance-options">Finance Options</a>
-      <a class="mobile-link mobile-sub-link" href="solutions.html#sla-options">SLA Options</a>
-      <a class="mobile-link" data-mobile-nav="contact" href="contact.html">Contact</a>
-      <a class="mobile-link mobile-quote" href="contact.html#contact-form">Request A Quote</a>
+      <a class="mobile-link" style="--item-index: 0" data-mobile-nav="home" href="index.html">Home</a>
+      <a class="mobile-link" style="--item-index: 1" data-mobile-nav="about" href="about.html">About</a>
+      <div class="mobile-dropdown" style="--item-index: 2">
+        <button class="mobile-link mobile-dropdown-toggle" type="button" aria-expanded="false">Services <span>▾</span></button>
+        <div class="mobile-dropdown-menu">
+          <a class="mobile-sub-link" href="services.html">All Services</a>
+          <a class="mobile-sub-link" href="services.html#access-control">Access Control</a>
+          <a class="mobile-sub-link" href="services.html#alarms">Alarms</a>
+          <a class="mobile-sub-link" href="services.html#boom-gates">Boom Gates</a>
+          <a class="mobile-sub-link" href="services.html#cctv">CCTV</a>
+          <a class="mobile-sub-link" href="services.html#control-room">CCTV Control Room</a>
+          <a class="mobile-sub-link" href="services.html#electric-fencing">Electric Fencing</a>
+          <a class="mobile-sub-link" href="services.html#solar">Solar</a>
+        </div>
+      </div>
+      <div class="mobile-dropdown" style="--item-index: 3">
+        <button class="mobile-link mobile-dropdown-toggle" type="button" aria-expanded="false">Solutions <span>▾</span></button>
+        <div class="mobile-dropdown-menu">
+          <a class="mobile-sub-link" href="solutions.html">All Solutions</a>
+          <a class="mobile-sub-link" href="solutions.html#finance-options">Finance Options</a>
+          <a class="mobile-sub-link" href="solutions.html#sla-options">Service Level Agreement Options</a>
+        </div>
+      </div>
+      <a class="mobile-link" style="--item-index: 4" data-mobile-nav="contact" href="contact.html">Contact</a>
+      <a class="mobile-link mobile-quote" style="--item-index: 5" href="contact.html#contact-form">Request A Quote</a>
     </nav>
   `;
   document.body.appendChild(mobileMenu);
@@ -63,6 +76,14 @@ if (menuToggle && navPanel) {
     }
   });
 
+  mobileMenu.querySelectorAll(".mobile-dropdown-toggle").forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const dropdown = toggle.closest(".mobile-dropdown");
+      const isOpen = dropdown.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+
   const closeMobileMenu = () => {
     body.classList.remove("menu-open");
     menuToggle.classList.remove("active");
@@ -71,6 +92,11 @@ if (menuToggle && navPanel) {
     menuToggle.setAttribute("aria-label", "Open menu");
     navDropdowns.forEach((dropdown) => {
       const toggle = dropdown.querySelector(".nav-dropdown-toggle");
+      dropdown.classList.remove("is-open");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+    });
+    mobileMenu.querySelectorAll(".mobile-dropdown").forEach((dropdown) => {
+      const toggle = dropdown.querySelector(".mobile-dropdown-toggle");
       dropdown.classList.remove("is-open");
       if (toggle) toggle.setAttribute("aria-expanded", "false");
     });

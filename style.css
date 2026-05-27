@@ -3666,8 +3666,6 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
 @media (max-width: 980px) {
   body.menu-open {
     overflow: hidden !important;
-    position: fixed !important;
-    width: 100% !important;
   }
 
   .nav-panel {
@@ -3700,10 +3698,13 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.18);
     transform: translateX(100%);
     -webkit-transform: translateX(100%);
-    transition: transform 0.3s ease;
-    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+    -webkit-transition: -webkit-transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
     z-index: 1001;
     -webkit-overflow-scrolling: touch;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .mobile-menu.active {
@@ -3730,27 +3731,78 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
   }
 
   .mobile-link {
-    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 15px 4px;
+    border: 0;
     border-bottom: 1px solid #eeeeee;
+    background: transparent;
     color: #111111;
+    font: inherit;
     font-size: 1.04rem;
     font-weight: 850;
     text-align: center;
-    transition: color 0.25s ease, transform 0.25s ease;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: color 0.25s ease, transform 0.32s ease, opacity 0.32s ease;
+    transition-delay: 0s;
+  }
+
+  .mobile-menu.active .mobile-link,
+  .mobile-menu.active .mobile-dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(0.045s * var(--item-index, 0));
   }
 
   .mobile-link:hover,
   .mobile-link.active {
     color: #ed1c25;
-    transform: translateX(5px);
+  }
+
+  .mobile-dropdown {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: transform 0.32s ease, opacity 0.32s ease;
+  }
+
+  .mobile-dropdown-toggle {
+    cursor: pointer;
+  }
+
+  .mobile-dropdown-toggle span {
+    margin-left: 8px;
+    transition: transform 0.22s ease;
+  }
+
+  .mobile-dropdown.is-open .mobile-dropdown-toggle {
+    color: #ed1c25;
+  }
+
+  .mobile-dropdown.is-open .mobile-dropdown-toggle span {
+    transform: rotate(180deg);
+  }
+
+  .mobile-dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .mobile-dropdown.is-open .mobile-dropdown-menu {
+    max-height: 440px;
   }
 
   .mobile-sub-link {
+    display: block;
     padding: 10px 4px;
+    border-bottom: 1px solid #f1f1f1;
     color: #4a4a4a;
     font-size: 0.92rem;
     font-weight: 750;
+    text-align: center;
   }
 
   .mobile-quote {
@@ -3766,6 +3818,7 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
   }
 
   .mobile-menu a,
+  .mobile-menu button,
   .menu-toggle {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent !important;
