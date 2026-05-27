@@ -21,6 +21,16 @@ const clientTrack = document.querySelector("[data-client-track]");
 const clientPrev = document.querySelector(".client-prev");
 const clientNext = document.querySelector(".client-next");
 const navDropdowns = document.querySelectorAll(".nav-dropdown");
+const siteHeader = document.querySelector(".site-header");
+
+const setHeaderHeight = () => {
+  if (!siteHeader) return;
+  document.documentElement.style.setProperty("--header-height", `${siteHeader.offsetHeight}px`);
+};
+
+setHeaderHeight();
+window.addEventListener("resize", setHeaderHeight, { passive: true });
+window.addEventListener("load", setHeaderHeight);
 
 if (year) {
   year.textContent = new Date().getFullYear();
