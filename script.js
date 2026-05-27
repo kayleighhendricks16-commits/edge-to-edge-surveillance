@@ -116,7 +116,14 @@ if (menuToggle && navPanel) {
   menuToggle.addEventListener("click", () => {
     const isOpen = body.classList.toggle("menu-open");
     menuToggle.classList.toggle("active", isOpen);
-    mobileMenu.classList.toggle("active", isOpen);
+    if (isOpen) {
+      mobileMenu.classList.remove("active");
+      requestAnimationFrame(() => {
+        mobileMenu.classList.add("active");
+      });
+    } else {
+      mobileMenu.classList.remove("active");
+    }
     menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
   });

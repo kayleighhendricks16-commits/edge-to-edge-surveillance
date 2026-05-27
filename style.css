@@ -3735,7 +3735,7 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 4px;
+    padding: 15px 16px;
     border: 0;
     border-bottom: 1px solid #eeeeee;
     background: transparent;
@@ -3745,8 +3745,8 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
     font-weight: 850;
     text-align: center;
     opacity: 0;
-    transform: translateY(16px);
-    transition: color 0.25s ease, transform 0.32s ease, opacity 0.32s ease;
+    transform: translateY(28px);
+    transition: color 0.25s ease, transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.48s ease;
     transition-delay: 0s;
   }
 
@@ -3754,7 +3754,7 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
   .mobile-menu.active .mobile-dropdown {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: calc(0.045s * var(--item-index, 0));
+    transition-delay: calc(0.075s * var(--item-index, 0));
   }
 
   .mobile-link:hover,
@@ -3764,12 +3764,15 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
 
   .mobile-dropdown {
     opacity: 0;
-    transform: translateY(16px);
-    transition: transform 0.32s ease, opacity 0.32s ease;
+    transform: translateY(28px);
+    transition: transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.48s ease;
   }
 
   .mobile-dropdown-toggle {
     cursor: pointer;
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+    background: #f8f8f8;
   }
 
   .mobile-dropdown-toggle span {
@@ -3788,21 +3791,35 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
   .mobile-dropdown-menu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    margin-top: 0;
+    padding: 0 10px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background: #fafafa;
+    transition: max-height 0.3s ease, margin-top 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
   }
 
   .mobile-dropdown.is-open .mobile-dropdown-menu {
     max-height: 440px;
+    margin-top: 8px;
+    padding: 10px;
+    border-color: #eeeeee;
   }
 
   .mobile-sub-link {
     display: block;
-    padding: 10px 4px;
-    border-bottom: 1px solid #f1f1f1;
-    color: #4a4a4a;
+    padding: 12px;
+    border-bottom: 1px solid #eeeeee;
+    border-radius: 12px;
+    color: #111111;
     font-size: 0.92rem;
     font-weight: 750;
     text-align: center;
+  }
+
+  .mobile-sub-link:hover {
+    background: rgba(237, 28, 37, 0.08);
+    color: #ed1c25;
   }
 
   .mobile-quote {
