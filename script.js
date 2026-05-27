@@ -38,7 +38,13 @@ if (menuToggle && navPanel) {
   mobileMenu.className = "mobile-menu";
   mobileMenu.id = "mobileMenu";
   mobileMenu.innerHTML = `
-    <div class="mobile-logo"><img src="etelogo.png" alt="Edge to Edge Surveillance logo" /></div>
+    <div class="mobile-menu-top">
+      <div class="mobile-logo"><img src="etelogo.png" alt="Edge to Edge Surveillance logo" /></div>
+      <button class="mobile-close" type="button" aria-label="Close menu" data-mobile-close>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
     <nav class="mobile-nav" aria-label="Mobile navigation">
       <a class="mobile-link" style="--item-index: 0" data-mobile-nav="home" href="index.html">Home</a>
       <a class="mobile-link" style="--item-index: 1" data-mobile-nav="about" href="about.html">About</a>
@@ -84,6 +90,8 @@ if (menuToggle && navPanel) {
     });
   });
 
+  const mobileClose = mobileMenu.querySelector("[data-mobile-close]");
+
   const closeMobileMenu = () => {
     body.classList.remove("menu-open");
     menuToggle.classList.remove("active");
@@ -127,6 +135,10 @@ if (menuToggle && navPanel) {
     menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
   });
+
+  if (mobileClose) {
+    mobileClose.addEventListener("click", closeMobileMenu);
+  }
 
   mobileMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", handleMobileNavigation);

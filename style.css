@@ -3712,17 +3712,72 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
     -webkit-transform: translateX(0);
   }
 
-  .mobile-logo {
-    padding: 26px 0 18px;
-    text-align: center;
-    border-bottom: 2px solid #ed1c25;
+  .mobile-menu-top {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 0 16px;
     margin-bottom: 16px;
+    border-bottom: 2px solid #ed1c25;
+    background: #ffffff;
+  }
+
+  .mobile-logo {
+    grid-column: 2;
+    padding: 0;
+    text-align: center;
+    border-bottom: 0;
+    margin-bottom: 0;
   }
 
   .mobile-logo img {
     width: min(230px, 68vw);
     height: auto;
     margin: 0 auto;
+  }
+
+  .mobile-close {
+    grid-column: 3;
+    position: relative;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #d7d7d7;
+    border-radius: 999px;
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(17, 17, 17, 0.12);
+    cursor: pointer;
+  }
+
+  .mobile-close span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: #111111;
+    transform-origin: center;
+  }
+
+  .mobile-close span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .mobile-close span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .mobile-close:hover {
+    border-color: #ed1c25;
+    background: #ed1c25;
+  }
+
+  .mobile-close:hover span {
+    background: #ffffff;
   }
 
   .mobile-nav {
