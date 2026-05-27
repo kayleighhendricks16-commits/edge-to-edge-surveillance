@@ -3657,6 +3657,14 @@ body[data-page="home"] .services-preview .service-card > a[href*="contact.html"]
   -webkit-text-fill-color: #ffffff !important;
 }
 
+a[href*="contact.html#contact-form"],
+a[href*="contact.html#contact-form"] *,
+.btn-primary,
+.btn-primary * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 /* Dedicated Mamba-style mobile menu */
 .mobile-menu {
   display: none;
