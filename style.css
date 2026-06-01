@@ -1925,6 +1925,44 @@ body[data-page="solutions"] .sla-options-block .sla-card > a:hover {
   white-space: nowrap;
 }
 
+.footer-grid > div:last-child :is(p, a[href^="mailto:"]) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-grid > div:last-child :is(p, a[href^="mailto:"])::before {
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 28px;
+  border-radius: 999px;
+  background: rgba(237, 28, 37, 0.16);
+  color: #ffffff;
+  font-size: 0.82rem;
+  box-shadow: inset 0 0 0 1px rgba(237, 28, 37, 0.42);
+}
+
+.footer-grid > div:last-child p:nth-of-type(1)::before {
+  content: "☎";
+}
+
+.footer-grid > div:last-child p:nth-of-type(2)::before {
+  content: "☎";
+}
+
+.footer-grid > div:last-child .footer-emergency::before {
+  content: "!";
+  font-weight: 900;
+  background: #ed1c25;
+  box-shadow: 0 10px 22px rgba(237, 28, 37, 0.22);
+}
+
+.footer-grid > div:last-child a[href^="mailto:"]::before {
+  content: "✉";
+}
+
 .footer a:hover {
   color: var(--white);
 }
@@ -2294,6 +2332,10 @@ textarea:focus-visible {
   .footer img {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .footer-grid > div:last-child :is(p, a[href^="mailto:"]) {
+    justify-content: center;
   }
 
   .socials {
